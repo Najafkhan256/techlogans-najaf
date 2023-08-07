@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import OutlineButton from "../outlineBUtton";
+import OutlineButton from "../outlineButton";
 
 const WhatWeCanDoData = [
   {

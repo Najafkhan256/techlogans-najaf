@@ -11,7 +11,7 @@ import {
   AccordionItemPanel,
 } from "react-accessible-accordion";
 import ServicesCards from "./homePageComponents/servicesCards";
-import StackLogos from "./StackLogos";
+import StackLogos from "./stackLogos";
 
 const ServiceIntro = () => {
   return (

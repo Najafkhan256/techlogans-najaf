@@ -2,7 +2,6 @@ import Layout from "@/Layout";
 import ContactForm from "@/components/contactForm";
 import CTA from "@/components/cta";
 import ExpertieseSection from "@/components/expertieseSection";
-import WhyChooseUs from "@/components/homePageComponents/WhyChooseUs";
 import BriefIntro from "@/components/homePageComponents/briefIntro";
 import HomeBanner from "@/components/homePageComponents/homeBanner";
 import OurProducts from "@/components/homePageComponents/ourProducts";
@@ -21,7 +20,6 @@ export default function Home() {
       <OurServices />
       <CTA />
       <WhatWeCanDo />
-      {/*<WhyChooseUs /> */}
       <Testimonials />
       <ContactForm />
       <Map />

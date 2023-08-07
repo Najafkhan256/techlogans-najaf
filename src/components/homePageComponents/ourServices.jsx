@@ -3,7 +3,7 @@ import { ServicesData } from "@/data";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import GreenButton from "../greenButton";
-import OutlineButton from "../outlineBUtton";
+import OutlineButton from "../outlineButton";
 
 const OurServices = () => {
   return (

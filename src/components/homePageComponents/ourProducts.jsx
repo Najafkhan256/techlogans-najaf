@@ -9,7 +9,7 @@ import CostEffectiveImage from "@/images/CostEffective.svg";
 import Image from "next/image";
 import { FaConnectdevelop } from "react-icons/fa";
 import GreenButton from "../greenButton";
-import OutlineButton from "../outlineBUtton";
+import OutlineButton from "../outlineButton";
 
 const productsData = [
   {
