@@ -1,0 +1,56 @@
+.ourMission {
+  h3 {
+    @include print-styles($section-title_defaults);
+    text-transform: capitalize;
+    text-align: center;
+    span {
+      color: $secondary-color;
+    }
+    @include tablet {
+      @include print-styles($section-title_defaults_md);
+    }
+  }
+  .cardWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 40px 0px;
+    @include tablet {
+      margin: 10px 0px;
+    }
+    .imageContainer {
+      height: 200px;
+      width: 200px;
+      color: white;
+      background-color: $primary-color;
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      svg {
+        font-size: 70px;
+      }
+      @include tablet {
+        height: 160px;
+        width: 160px;
+      }
+    }
+    .contentWrapper {
+      h2 {
+        @include print-styles($section-title_defaults);
+        text-transform: capitalize;
+        margin-top: 20px;
+        @include tablet {
+          @include print-styles($section-title_defaults_md);
+        }
+      }
+      p {
+        @include print-styles($section-summary-defaults);
+        @include tablet {
+          @include print-styles($section-summary-defaults-md);
+        }
+      }
+    }
+  }
+}

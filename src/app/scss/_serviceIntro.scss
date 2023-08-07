@@ -1,0 +1,61 @@
+.service_Intro {
+  margin: 50px 0px;
+  h2 {
+    @include print-styles($section-title_defaults);
+    text-align: center;
+    span {
+      color: $secondary-color;
+    }
+    @include tablet {
+      @include print-styles($section-title_defaults_md);
+    }
+  }
+  p {
+    @include print-styles($section-summary-defaults);
+    text-align: center;
+    @include tablet {
+      @include print-styles($section-summary-defaults-md);
+    }
+  }
+  .services_content {
+    h3 {
+      @include print-styles($section-title_defaults);
+      @include tablet {
+        @include print-styles($section-title_defaults_md);
+      }
+    }
+    p {
+      @include print-styles($section-summary-defaults);
+      text-align: left;
+      @include tablet {
+        @include print-styles($section-summary-defaults-md);
+      }
+    }
+  }
+
+  .accordion__heading {
+    .accordion__button {
+      @include print-styles($section-title_defaults_sm);
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      width: 100%;
+      background-color: rgb(250, 245, 245);
+      &:hover {
+        background-color: rgb(216, 216, 216);
+      }
+      &::before {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+.popular_stacks {
+  @include print-styles($section-title_defaults);
+  text-transform: capitalize;
+  text-align: center;
+  span {
+    color: $secondary-color;
+  }
+}

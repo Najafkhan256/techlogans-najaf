@@ -1,0 +1,127 @@
+.about-view {
+  .section-summary {
+    @include print-styles($section-summary-defaults);
+    margin-bottom: 10px;
+    @include tablet {
+      @include print-styles($section-summary-defaults-md);
+    }
+  }
+
+  .section-title {
+    @include print-styles($section-title_defaults);
+    span {
+      color: $secondary-color;
+    }
+    @include tablet {
+      @include print-styles($section-title_defaults_md);
+    }
+  }
+
+  section {
+    padding-bottom: 0;
+  }
+
+  .about-us-section {
+    padding-bottom: 3%;
+    .title-container {
+      //   text-align: left;
+      text-align: center;
+    }
+    .philosophy {
+      line-height: 42px;
+      color: $third-color;
+      @media (max-width: 992px) {
+        padding: 0;
+      }
+    }
+    .about-us-description-wrapper {
+      margin-top: -20px;
+    }
+  }
+  .about-top-links-container {
+    text-align: center;
+    ul li {
+      display: inline-block;
+      margin-right: 35px;
+      padding-top: 12px;
+    }
+    ul li {
+      a {
+        font-size: 14px;
+        font-weight: 500;
+        color: $primary-color;
+        text-transform: uppercase;
+        font-weight: bold;
+        position: relative;
+      }
+    }
+    .active a,
+    a:hover {
+      font-weight: 700;
+      &:after {
+        content: "";
+        width: 30px;
+        background-color: $secondary-color;
+        bottom: -8px;
+        height: 2px;
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+  li i.fa {
+    margin-right: 10px;
+  }
+
+  .about-top-links a:hover {
+    text-decoration: none;
+  }
+}
+
+.core-values-section {
+  margin-bottom: 50px;
+  // background: $about-core-value-section-bg-color;
+  .title-container {
+    .section-title {
+      text-align: center;
+    }
+  }
+  .paragraph {
+    @include print-styles($section-summary-defaults);
+    text-align: center;
+    margin-bottom: 50px;
+    @include tablet {
+      @include print-styles($section-summary-defaults-md);
+    }
+  }
+  .card-wrapper {
+    padding: 4%;
+    @media (max-width: 992px) {
+      padding: 0;
+    }
+
+    .img-wrapper {
+      height: 50px;
+      width: 50px;
+      img {
+        object-fit: contain;
+      }
+    }
+    .card-title {
+      h4 {
+        @include print-styles($section-title_defaults);
+        font-size: 20px;
+        text-align: left;
+        color: $primary-color !important;
+      }
+    }
+    .card-paragraph {
+      p {
+        @include print-styles($section-summary-defaults);
+        @include tablet {
+          text-align: center;
+        }
+      }
+    }
+  }
+}

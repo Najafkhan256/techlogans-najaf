@@ -1,0 +1,89 @@
+.caseStudy_details {
+  max-width: 900px;
+  margin: 40px auto;
+  position: relative;
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+.service_we_use {
+  h2 {
+    @include print-styles($section-title_defaults);
+    text-align: center;
+    span {
+      color: $secondary-color;
+    }
+  }
+}
+
+.main-title {
+  background: #f7f9fd;
+  padding: 100px 0px;
+  .title {
+    h2 {
+      @include print-styles($section-title_defaults_md);
+      text-align: left;
+    }
+    p {
+      @include print-styles($section-summary-defaults);
+    }
+  }
+
+  .solution_wrapper {
+    box-shadow: -3px 0px 16px 11px rgba(197, 232, 183, 0.75);
+    -webkit-box-shadow: -3px 0px 16px 11px rgba(197, 232, 183, 0.75);
+    -moz-box-shadow: -3px 0px 16px 11px rgba(197, 232, 183, 0.75);
+
+    border-radius: 10px;
+
+    .solution_card {
+      padding: 30px;
+      .solution_card_content {
+        h3 {
+          font-size: 18px;
+          font-weight: 600;
+          color: #0c2460;
+        }
+      }
+    }
+  }
+}
+.card-container {
+  background-color: $primary-color;
+  border-radius: 6px;
+  .card-wrapper {
+    padding: 20px;
+    .card-contents {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 6px;
+      margin-bottom: 20px;
+      h3 {
+        color: $light-color;
+        font-size: 15px;
+      }
+      h4 {
+        color: $secondary-color;
+        text-align: start;
+        font-size: 15px;
+      }
+      .graphic {
+        margin-right: 60px;
+      }
+      .pixeden {
+        margin-right: 40px;
+      }
+    }
+    .btn-contact-us {
+      background: #3abb69;
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      font-weight: bold;
+      width: 100%;
+      text-transform: uppercase;
+      padding: 13px;
+    }
+  }
+}

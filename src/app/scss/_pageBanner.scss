@@ -1,0 +1,47 @@
+.banner-component {
+  position: relative;
+  background: $primary-color;
+  padding: 2.5% 2% 1.5%;
+  min-height: 158px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  border-radius: 0% 0% 50% 50% / 0% 0% 29% 29% ;
+
+  .title {
+    @include print-styles($section-title_defaults);
+    color: $banner-title-color;
+    text-transform: capitalize;
+    text-align: center;
+    span {
+      color: $secondary-color;
+    }
+
+    @media (max-width: $xs-max-width) {
+      & {
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    border-top: 0.1px solid $banner-border-top-color;
+    padding-top: 4%;
+  }
+  .breadcrumb-item {
+    &::before {
+      color: $light-color;
+    }
+  }
+  .breadcrumb-link {
+    color: $light-color;
+  }
+  .breadcrumb-active-link {
+    cursor: default;
+    &:hover {
+      color: $light-color;
+    }
+  }
+}
+// end banner component

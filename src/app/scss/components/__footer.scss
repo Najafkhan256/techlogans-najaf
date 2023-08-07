@@ -1,0 +1,137 @@
+footer {
+  position: relative;
+  border: 0.5px solid $primary-color;
+  background-color: $primary-color;
+  background-size: cover;
+  background-attachment: fixed !important;
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    list-style: none;
+    a {
+      text-decoration: none;
+    }
+  }
+  a:focus,
+  a:hover {
+    text-decoration: none;
+    -webkit-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease;
+    color: white;
+  }
+  a:focus {
+    outline: 0;
+  }
+  img {
+    max-width: 100%;
+  }
+  p {
+    font-size: 16px;
+    line-height: 30px;
+    color: #898b96;
+    font-weight: 300;
+  }
+  h4 {
+    margin: 0;
+    font-weight: 400;
+    padding: 0;
+    color: #363940;
+  }
+  a {
+    color: white;
+  }
+  .no-padding {
+    padding: 0 !important;
+  }
+
+  .footer-big {
+    padding: 70px 0 20px 0;
+  }
+  .footer-big .footer-widget {
+    margin-bottom: 40px;
+  }
+  .footer--light {
+    background: #e7e8ed;
+  }
+  .footer-big .footer-menu ul li a,
+  .footer-big p,
+  .footer-big ul li {
+    color: #67779c;
+  }
+  .footer-menu {
+    padding-left: 48px;
+    .social_links {
+      li {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+      }
+      a {
+        padding-left: 20px;
+      }
+    }
+  }
+  .footer-menu ul li a {
+    font-size: 17px;
+    line-height: 32px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    font-weight: 700;
+    @include tablet {
+      @include print-styles($section-summary-defaults-md);
+    }
+  }
+  .footer-menu ul li a:hover {
+    color: white;
+    font-weight: 700;
+  }
+  .footer-widget-title {
+    line-height: 42px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .footer-bottom {
+    p {
+      @include print-styles($section-summary-defaults);
+      @include mobile {
+        font-size: 12px;
+      }
+      a {
+        text-decoration: none;
+        margin: 0px 10px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .widget-about img {
+    display: block;
+    margin-bottom: 20px;
+  }
+  .widget-about p {
+    @include print-styles($section-summary-defaults);
+    @include desktop {
+      @include print-styles($section-summary-defaults-md);
+    }
+  }
+
+  @media (max-width: 991px) {
+    .footer-menu {
+      padding-left: 0;
+    }
+  }
+}
+.social_icons {
+  display: flex;
+  li {
+    margin-right: 20px;
+  }
+}

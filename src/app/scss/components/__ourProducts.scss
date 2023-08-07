@@ -1,0 +1,80 @@
+.product-components {
+  .section-title {
+    @include print-styles($section-title_defaults);
+    text-align: center;
+    @include tablet {
+      @include print-styles($section-title_defaults_md);
+    }
+    span {
+      color: $secondary-color;
+      margin-right: 10px;
+    }
+  }
+  .section-summary {
+    @include print-styles($section-summary-defaults);
+    text-align: center;
+    @include tablet {
+      @include print-styles($section-summary-defaults-md);
+    }
+  }
+
+  .product-icon {
+    height: 60px;
+    width: 60px;
+    margin: 0px auto;
+  }
+  .even-column {
+    background-color: $methodology-layer-active-color;
+    padding-top: 40px;
+    color: white !important;
+    @include tablet {
+      padding: 20px 10px;
+    }
+    .section-column-title {
+      @include print-styles($section-title_defaults_md);
+      text-align: center;
+      color: white;
+
+      @include tablet {
+        @include print-styles($section-title_defaults_md);
+        color: white;
+      }
+    }
+    .productDescription {
+      @include print-styles($section-summary-defaults);
+      text-align: center;
+      padding: 0px 10px;
+      color: white;
+      @include tablet {
+        @include print-styles($section-summary-defaults-md);
+        color: white;
+      }
+    }
+  }
+
+  .odd-column {
+    padding: 30px;
+    margin: 0px auto;
+    @include tablet {
+      padding: 20px 10px;
+    }
+    .section-column-title {
+      @include print-styles($section-title_defaults);
+      text-align: center;
+      @include tablet {
+        @include print-styles($section-title_defaults_md);
+      }
+    }
+    .productDescription {
+      @include print-styles($section-summary-defaults);
+      text-align: center;
+      padding: 0px 10px;
+      @include tablet {
+        @include print-styles($section-summary-defaults-md);
+      }
+    }
+    .developement {
+      color: $primary-color !important;
+    }
+  }
+}

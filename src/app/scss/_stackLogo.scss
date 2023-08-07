@@ -1,0 +1,24 @@
+.logoWrapper {
+  margin: 40px 0px;
+  text-align: center;
+  a {
+    text-decoration: none;
+  }
+  svg {
+    color: $primary-color;
+    font-size: 60px;
+    transition: 0.2s ease-in-out;
+  }
+
+  h2 {
+    @include print-styles($section-title_defaults_md);
+    margin-top: 15px;
+  }
+  &:hover {
+    svg {
+      -ms-transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.outlineButton {
+  padding: 10px 17px;
+  background-color: transparent;
+  color: $primary-color;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 6px;
+  border: 2px solid $primary-color;
+  @include tablet {
+    padding: 8px 13px;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  &:hover {
+    background: $primary-color;
+    color: #fff;
+    transition: all 0.3s ease;
+    // box-shadow: 0 0 11px 0px $primary-color;
+  }
+}

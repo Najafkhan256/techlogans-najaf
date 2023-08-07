@@ -1,0 +1,45 @@
+.briefContentWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.briefIntro {
+  padding: 50px 0px 0px 0px;
+  text-align: left;
+  position: relative;
+  .brief_image {
+    @include desktop {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  img {
+    @include desktop {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .section-title {
+    @include print-styles($section-title_defaults);
+    @include tablet {
+      text-align: center;
+      @include print-styles($section-title_defaults_md);
+    }
+    span {
+      color: $secondary-color;
+    }
+  }
+  .section-summary {
+    p {
+      @include print-styles($section-summary-defaults);
+      @include tablet {
+        @include print-styles($section-summary-defaults-md);
+      }
+      //   color: #67779c;
+      //   line-height: 34px;
+      //   padding: 0;
+      //   text-align: center;
+    }
+  }
+}

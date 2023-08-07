@@ -1,0 +1,191 @@
+// Brand Colors
+$primary-color: #0d2460;
+$secondary-color: #3abb69;
+$third-color: #67779c;
+$dark-background-font-color: #fff;
+$dark-border-color: #cbcbcb;
+$hr-color: #53658f;
+$light-color: #fff;
+$light-fade: rgba(255, 255, 255, 0.9);
+$dark-color: #000;
+$soft-shadow-color: #e6e6e6;
+/*Polymath Theme Colors*/
+$menu-li-a-color: #fff;
+$menu-has-dropdown-after-color: #fff;
+$nav-button-hover-color: #fff;
+$second-button-color: #e2f5e9;
+$primary-color-light: #ebf5fe;
+
+/*Component Colors*/
+$input-border-color: #4d5e89;
+$textarea-focus-color: #ccc;
+$methodology-layer-color: #fff;
+$methodology-layer-active-color: #60c582;
+$methodology-text-color: #04205b;
+$methodology-title-text-color: #fff;
+$methodology-content-bg-color: #fff;
+$methodology-number-color: #e9f6ed;
+$blog-author-border-color: #67779c;
+$banner-border-top-color: $primary-color;
+$banner-title-color: #fff;
+$social-links-contact-component-hover-img-color: #fff;
+$link-hover-color: #fff;
+/*
+Page Colors
+*/
+/*
+-Home
+*/
+$header-title-color: #fff;
+$clickable-tabs-section-bg-color: #f1f8fe;
+/*
+-Blog
+*/
+$blog-page-background-color: #f4f4f4;
+// $blog-post-inner-bg-color: #fff;
+/*
+-Blog post inner
+*/
+// $blog-post-inner-color: #fff;
+$blog-counter-color: #bbbbbb;
+/*
+-Contact Us
+*/
+$alert-color: #bbbdbf;
+$alert-icon-color: #fff;
+$alert-background-color: #f4f4f4;
+$alert-danger-color: #ff0000;
+$alert-success-color: #45c402;
+$alert-warning-color: #d88519;
+$contact-side-bar-color: #fff;
+$contact-label-color: #6f6f6f;
+$contact-li-color: #67779c;
+$contact-p-color: #67779c;
+$contact-info-paragraph-color: #fff;
+/*
+-Services
+*/
+$services-section-bg-color: #f1f8ff;
+/*
+-About
+*/
+/*----> Organization*/
+$about-core-value-section-bg-color: #f1f8ff;
+/*----> Team*/
+$featured-polymath-section-bg-color: #f1f8ff;
+
+// Typography
+$enable-responsive-font-sizes: true;
+$standard-body-font: (
+  font-size: 16px,
+);
+$larger-body-font: (
+  font-size: 19px,
+  line-height: 31px,
+);
+$section-header-font: (
+  font-size: 24px,
+);
+$default-line-height: 34px;
+
+// Shapes
+$button-rounded-radius: 6px;
+$button-defaults: (
+  background: $secondary-color,
+  border: none,
+  border-radius: $button-rounded-radius,
+  color: $dark-background-font-color,
+  font-weight: bold,
+);
+
+$after-line-defaults: (
+  content: "",
+  width: 30px,
+  height: 3px,
+  // margin: 0 auto,
+  position: absolute,
+  left: 0,
+  right: 0,
+  bottom: -31px,
+  background-color: $secondary-color,
+);
+
+$section-summary-defaults: (
+  padding: 0,
+  color: $third-color,
+  line-height: $default-line-height,
+  font-size: 19px,
+);
+$section-summary-defaults-md: (
+  padding: 0,
+  color: $third-color,
+  line-height: $default-line-height,
+  font-size: 16px,
+);
+$section-summary-defaults-sm: (
+  padding: 0,
+  color: $third-color,
+  line-height: $default-line-height,
+  font-size: 14px,
+);
+
+$main-button-hover-defaults: (
+  box-shadow: 0 0 11px 0px seagreen,
+);
+
+$second-button-hover-defaults: (
+  box-shadow: 0 0 11px 0px seagreen,
+  color: #fff,
+  background-color: $secondary-color,
+);
+
+$section-title_defaults: (
+  color: #0c2460,
+  font-weight: bold,
+  margin-bottom: 20px,
+  font-size: 2rem,
+  position: relative,
+);
+
+$section-title_defaults_md: (
+  color: #0c2460,
+  font-weight: bold,
+  margin-bottom: 10px,
+  font-size: 1.7rem,
+  position: relative,
+);
+$section-title_defaults_sm: (
+  color: #0c2460,
+  font-weight: bold,
+  margin-bottom: 10px,
+  font-size: 1.2rem,
+  position: relative,
+);
+$section-title_defaults_xs: (
+  color: #0c2460,
+  font-weight: bold,
+  margin-bottom: 10px,
+  font-size: 1rem,
+  position: relative,
+);
+
+@mixin alert-style($color) {
+  border: 1px solid $color;
+  color: $color;
+}
+
+// Responsive dimensions
+$xs-max-width: 768px;
+$sm-min-width: 768px;
+$md-min-width: 992px;
+$lg-min-width: 1200px;
+
+@mixin print-styles($map) {
+  @each $property, $value in $map {
+    #{$property}: $value;
+  }
+}
+
+// fonts
+// $fa-font-path: "../../node_modules/@fortawesome/fontawesome-free/webfonts";
+// $themify-font-path: "../fonts"; // should be relative to the main scss file where it's imported

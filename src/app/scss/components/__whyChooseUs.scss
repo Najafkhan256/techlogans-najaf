@@ -1,0 +1,42 @@
+.why-us h2 {
+  @include print-styles($section-title_defaults);
+}
+.why-us p {
+  @include print-styles($section-summary-defaults);
+}
+.why-us .box p {
+  @include print-styles($section-summary-defaults);
+}
+.why-us .box {
+  padding: 30px;
+  transition: 0.5s;
+  position: relative;
+  min-height: 250px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  border: 2px solid $primary-color;
+}
+
+.why-us .box img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: -1;
+  opacity: 0;
+  transition: all ease 1s;
+}
+.why-us .box span {
+  display: block;
+  font-size: 56px;
+  font-weight: 700;
+  color: $methodology-layer-active-color;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  line-height: normal;
+}
+.why-us .box h4 {
+  @include print-styles($section-title_defaults);
+}

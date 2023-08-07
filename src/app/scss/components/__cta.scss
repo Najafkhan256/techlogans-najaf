@@ -1,0 +1,31 @@
+.cta {
+  background-color: $primary-color;
+  padding: 40px 0px;
+  margin: 50px 0px;
+  .cta_content {
+    h2 {
+      @include print-styles($section-title_defaults);
+      color: white;
+      span {
+        color: $secondary-color;
+      }
+      @include tablet {
+        @include print-styles($section-title_defaults_md);
+        color: white;
+      }
+    }
+    p {
+      @include print-styles($section-summary-defaults);
+      color: white;
+      @include tablet {
+        @include print-styles($section-summary-defaults-md);
+      }
+    }
+    .contact_us_btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+  }
+}

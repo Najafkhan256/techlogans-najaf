@@ -1,0 +1,36 @@
+.social__Links {
+  height: 200px;
+  width: 50px;
+  position: fixed;
+  z-index: 2;
+  bottom: 200px;
+  right: 0px;
+  @include desktop {
+    width: 35px;
+  }
+  ul {
+    padding: 0;
+    li {
+      list-style-type: none;
+      height: 50px;
+      width: 50px;
+      margin: 10px 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $secondary-color;
+      border-radius: 8px 0px 0px 8px;
+      transition: 0.7s;
+      @include desktop {
+        width: 35px;
+        height: 35px;
+      }
+      &:hover {
+        width: 70px;
+      }
+      a {
+        color: white;
+      }
+    }
+  }
+}

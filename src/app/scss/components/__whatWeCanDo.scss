@@ -1,0 +1,68 @@
+.whatWeCanDo {
+  .title-container {
+    .section-title {
+      @include print-styles($section-title_defaults);
+      text-align: center;
+      span {
+        color: $secondary-color;
+      }
+      @include tablet {
+        @include print-styles($section-title_defaults_md);
+      }
+    }
+  }
+  .section-summary {
+    @include print-styles($section-summary-defaults);
+    text-align: center;
+  }
+}
+
+.ag-format-container {
+  margin: 0 auto;
+}
+
+.ag-courses_item {
+  border-radius: 10px;
+  margin: 13px 0px;
+}
+.ag-courses-item_link {
+  display: block;
+  padding: 30px 20px;
+  background-color: $primary-color;
+  overflow: hidden;
+  position: relative;
+  min-height: 284px;
+  border-radius: 6px;
+
+  @include tablet {
+    min-height: 210px;
+  }
+}
+
+.ag-courses-item_title {
+  @include print-styles($section-title_defaults);
+  color: #fff;
+  @include tablet {
+    @include print-styles($section-title_defaults_md);
+    color: #fff;
+  }
+}
+
+.ag-courses-item_date-box {
+  color: white !important;
+  @include print-styles($section-summary-defaults);
+  @include tablet {
+    @include print-styles($section-summary-defaults-md);
+    color: #fff;
+  }
+}
+
+.ag-courses-item_bg {
+  height: 128px;
+  width: 128px;
+  background-color: $secondary-color;
+  position: absolute;
+  top: -75px;
+  right: -75px;
+  border-radius: 50%;
+}
