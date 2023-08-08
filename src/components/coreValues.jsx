@@ -4,7 +4,7 @@ import React from "react";
 
 const CoreValues = () => {
   return (
-    <section className="core-values-section">
+    <section className="core-values-section light_background">
       <div className="container">
         <div className="title-container">
           <h2 className="section-title">

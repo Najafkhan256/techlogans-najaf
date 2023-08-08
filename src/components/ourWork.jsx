@@ -15,7 +15,7 @@ const OurWork = () => {
       {AllPorjectsData.map((project, index) => {
         const isEvenColumn = index % 2 === 0;
         return (
-          <div className="case_study_card my-5" key={index}>
+          <div className="case_study_card my-5 pb-5" key={index}>
             <Container>
               <Row>
                 {isEvenColumn ? (
@@ -32,8 +32,17 @@ const OurWork = () => {
                             <p className="section-summary text-left">
                               {project.description}
                             </p>
+                            <div className="case_study_stacks">
+                              <ul>
+                                <li>ReacJs</li>
+                                <li>ReacJs</li>
+                                <li>Mongo DB</li>
+                                <li>ReacJs</li>
+                                <li>ReacJs</li>
+                              </ul>
+                            </div>
                           </div>
-                          <div className="mt-5 d-flex justify-content-center justify-content-center justify-content-lg-start">
+                          <div className="buttonWrapper">
                             <GreenButton
                               name="LEARN MORE"
                               route={`all-case-studies/${project.title}`}
@@ -64,8 +73,17 @@ const OurWork = () => {
                             <p className="section-summary text-left">
                               {project.description}
                             </p>
+                            <div className="case_study_stacks">
+                              <ul>
+                                <li>ReacJs</li>
+                                <li>ReacJs</li>
+                                <li>Mongo DB</li>
+                                <li>ReacJs</li>
+                                <li>ReacJs</li>
+                              </ul>
+                            </div>
                           </div>
-                          <div className="mt-5 d-flex justify-content-center justify-content-center justify-content-lg-start">
+                          <div className=" buttonWrapper">
                             <GreenButton
                               name="LEARN MORE"
                               route={`all-case-studies/${project.title}`}

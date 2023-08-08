@@ -19,8 +19,11 @@
 
     .homeBannerContent {
       h1 {
-        font-weight: 700;
+        @include print-styles($section-title_defaults);
         color: $secondary-color !important;
+        @include tablet {
+          @include print-styles($section-title_defaults_md);
+        }
       }
       span {
         // font-size: 2.5rem;

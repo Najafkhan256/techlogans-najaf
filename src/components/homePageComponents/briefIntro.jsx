@@ -18,8 +18,12 @@ const BriefIntro = () => {
       <Container className="pt-md-3 pt-0">
         <Row>
           <Col lg={6} md={12} className="order-lg-1 order-2 d-none d-md-block">
-            <div data-aos="fade-right" data-aos-duration="2000" className="brief_image">
-              <Image src={AboutImage} alt="about" height={480} width={480} />
+            <div
+              data-aos="fade-right"
+              data-aos-duration="2000"
+              className="brief_image"
+            >
+              <Image src={AboutImage} alt="about" height={480} width={480} className="img-fluid" />
             </div>
           </Col>
           <Col lg={6} md={12} className="order-lg-2 order-1">
@@ -49,7 +53,6 @@ const BriefIntro = () => {
             </div>
           </Col>
         </Row>
-        <CaseStudySlider />
       </Container>
     </div>
   );

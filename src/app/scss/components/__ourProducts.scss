@@ -34,9 +34,8 @@
       @include print-styles($section-title_defaults_md);
       text-align: center;
       color: white;
-
       @include tablet {
-        @include print-styles($section-title_defaults_md);
+        @include print-styles($section-title_defaults_sm);
         color: white;
       }
     }
@@ -59,10 +58,10 @@
       padding: 20px 10px;
     }
     .section-column-title {
-      @include print-styles($section-title_defaults);
+      @include print-styles($section-title_defaults_md);
       text-align: center;
       @include tablet {
-        @include print-styles($section-title_defaults_md);
+        @include print-styles($section-title_defaults_sm);
       }
     }
     .productDescription {

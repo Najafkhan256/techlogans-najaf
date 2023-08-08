@@ -1,0 +1,45 @@
+.media_object {
+  margin: 40px 0px;
+  .media_object_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    @include tablet {
+      display: block;
+    }
+  }
+  .image_wrapper {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $primary-color;
+    border-radius: 50%;
+    svg {
+      font-size: 40px;
+      color: white;
+      @include tablet {
+        height: 30px;
+        width: 30px;
+      }
+    }
+    @include tablet {
+      height: 50px;
+      width: 50px;
+    }
+  }
+  h3 {
+    @include print-styles($section-title_defaults_md);
+    @include tablet {
+      @include print-styles($section-title_defaults_sm);
+    }
+  }
+  p {
+    @include print-styles($section-summary-defaults);
+    margin-bottom: 0;
+    @include tablet {
+      @include print-styles($section-summary-defaults-md);
+    }
+  }
+}

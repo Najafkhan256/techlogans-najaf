@@ -13,10 +13,11 @@ const StackLogos = () => {
             return (
               <Col lg={2}>
                 <div className="logoWrapper">
-                  <Link href={`services/${logo.title}`}>
+                  {/* <Link href={`services/${logo.title}`}> */}
+                  <div>
                     <div>{logo.icon}</div>
                     <h2>{logo.title}</h2>
-                  </Link>
+                  </div>
                 </div>
               </Col>
             );

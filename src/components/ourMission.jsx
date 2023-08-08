@@ -7,11 +7,11 @@ import { MissionData } from "@/data";
 
 const OurMission = () => {
   return (
-    <div className="ourMission">
+    <div className="ourMission light_background">
       <h3>
         our <span> mission </span>
       </h3>
-      <Container className="my-5">
+      <Container className="">
         <Row>
           {MissionData &&
             MissionData.map((mission) => {

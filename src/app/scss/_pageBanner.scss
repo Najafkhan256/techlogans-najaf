@@ -7,7 +7,13 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
-  border-radius: 0% 0% 50% 50% / 0% 0% 29% 29% ;
+  border-radius: 0% 0% 50% 50% / 0% 0% 29% 29%;
+  .span {
+    @include print-styles($section-summary-defaults);
+    text-align: center;
+    text-transform: uppercase;
+    color: $secondary-color;
+  }
 
   .title {
     @include print-styles($section-title_defaults);
@@ -23,6 +29,10 @@
         font-size: 1.8rem;
       }
     }
+  }
+  p {
+    @include print-styles($section-summary-defaults);
+    text-align: center;
   }
 
   @media (max-width: 992px) {

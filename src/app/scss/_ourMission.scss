@@ -16,6 +16,9 @@
     align-items: center;
     text-align: center;
     margin: 40px 0px;
+    @include mdDesktop {
+      margin: 15px 0px;
+    }
     @include tablet {
       margin: 10px 0px;
     }
@@ -32,17 +35,21 @@
         font-size: 70px;
       }
       @include tablet {
-        height: 160px;
-        width: 160px;
+        height: 140px;
+        width: 140px;
+      }
+      @include mobile{
+        height: 120px;
+        width: 120px;
       }
     }
     .contentWrapper {
       h2 {
-        @include print-styles($section-title_defaults);
+        @include print-styles($section-title_defaults_md);
         text-transform: capitalize;
         margin-top: 20px;
         @include tablet {
-          @include print-styles($section-title_defaults_md);
+          @include print-styles($section-title_defaults_sm);
         }
       }
       p {

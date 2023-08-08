@@ -40,10 +40,10 @@
 }
 
 .ag-courses-item_title {
-  @include print-styles($section-title_defaults);
+  @include print-styles($section-title_defaults_md);
   color: #fff;
   @include tablet {
-    @include print-styles($section-title_defaults_md);
+    @include print-styles($section-title_defaults_sm);
     color: #fff;
   }
 }

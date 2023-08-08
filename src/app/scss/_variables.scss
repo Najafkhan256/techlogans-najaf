@@ -3,7 +3,7 @@ $primary-color: #0d2460;
 $secondary-color: #3abb69;
 $third-color: #67779c;
 $dark-background-font-color: #fff;
-$dark-border-color: #cbcbcb;
+$dark-border-color: #b8b3b3;
 $hr-color: #53658f;
 $light-color: #fff;
 $light-fade: rgba(255, 255, 255, 0.9);
@@ -30,6 +30,7 @@ $banner-border-top-color: $primary-color;
 $banner-title-color: #fff;
 $social-links-contact-component-hover-img-color: #fff;
 $link-hover-color: #fff;
+$section-bg-color: #f7f9fd;
 /*
 Page Colors
 */
@@ -41,7 +42,7 @@ $clickable-tabs-section-bg-color: #f1f8fe;
 /*
 -Blog
 */
-$blog-page-background-color: #f4f4f4;
+$blog-page-background-color: #f0eeee;
 // $blog-post-inner-bg-color: #fff;
 /*
 -Blog post inner
@@ -142,8 +143,8 @@ $second-button-hover-defaults: (
 $section-title_defaults: (
   color: #0c2460,
   font-weight: bold,
-  margin-bottom: 20px,
-  font-size: 2rem,
+  margin-bottom: 15px,
+  font-size: 2.3rem,
   position: relative,
 );
 
@@ -157,8 +158,8 @@ $section-title_defaults_md: (
 $section-title_defaults_sm: (
   color: #0c2460,
   font-weight: bold,
-  margin-bottom: 10px,
-  font-size: 1.2rem,
+  margin-bottom: 5px,
+  font-size: 1.3rem,
   position: relative,
 );
 $section-title_defaults_xs: (

@@ -26,10 +26,11 @@ const ServiceIntro = () => {
           and microservice development, because we believe these domains offer
           the most value in today’s digital ecosystem.
         </p>
-        <StackLogos />
-        <ServicesCards />
-
-        <Row>
+      </Container>
+      {/* <StackLogos /> */}
+      <ServicesCards />
+      <Container>
+        <Row className="mt-5">
           {servicesItroData &&
             servicesItroData?.map((serviceIntro, index) => {
               const isEvenColumn = index % 2 === 0;
@@ -82,50 +83,52 @@ const ServiceIntro = () => {
                       </Col>
                     </>
                   ) : (
-                    <>
-                      <Col lg={6} className="my-3">
-                        <div className="services_content">
-                          <h3>{serviceIntro.title}</h3>
-                          <p>{serviceIntro.description}</p>
-                          {serviceIntro.bullets && (
-                            <Accordion preExpanded={firstBulletUUID}>
-                              {serviceIntro.bullets.map(
-                                (bullet, bulletIndex) => (
-                                  <AccordionItem
-                                    key={bulletIndex}
-                                    uuid={`a-${index}-${bulletIndex}`}
-                                  >
-                                    <AccordionItemHeading>
-                                      <AccordionItemButton>
-                                        {bullet}
-                                      </AccordionItemButton>
-                                    </AccordionItemHeading>
-                                    <AccordionItemPanel>
-                                      <p>{bullet}</p>
-                                    </AccordionItemPanel>
-                                  </AccordionItem>
-                                )
-                              )}
-                            </Accordion>
-                          )}
+                    <div>
+                      <Row className="py-4">
+                        <Col lg={6} className="my-3">
+                          <div className="services_content">
+                            <h3>{serviceIntro.title}</h3>
+                            <p>{serviceIntro.description}</p>
+                            {serviceIntro.bullets && (
+                              <Accordion preExpanded={firstBulletUUID}>
+                                {serviceIntro.bullets.map(
+                                  (bullet, bulletIndex) => (
+                                    <AccordionItem
+                                      key={bulletIndex}
+                                      uuid={`a-${index}-${bulletIndex}`}
+                                    >
+                                      <AccordionItemHeading>
+                                        <AccordionItemButton>
+                                          {bullet}
+                                        </AccordionItemButton>
+                                      </AccordionItemHeading>
+                                      <AccordionItemPanel>
+                                        <p>{bullet}</p>
+                                      </AccordionItemPanel>
+                                    </AccordionItem>
+                                  )
+                                )}
+                              </Accordion>
+                            )}
 
-                          <div className="mt-4">
-                            <GreenButton name="Learn More" />
+                            <div className="mt-4">
+                              <GreenButton name="Learn More" />
+                            </div>
                           </div>
-                        </div>
-                      </Col>
-                      <Col lg={6} className="my-3">
-                        <div className="image_wrapper">
-                          <Image
-                            src={serviceIntro.image}
-                            alt="cloud native"
-                            height={600}
-                            width={600}
-                            className="img-fluid"
-                          />
-                        </div>
-                      </Col>
-                    </>
+                        </Col>
+                        <Col lg={6} className="my-3">
+                          <div className="image_wrapper">
+                            <Image
+                              src={serviceIntro.image}
+                              alt="cloud native"
+                              height={600}
+                              width={600}
+                              className="img-fluid"
+                            />
+                          </div>
+                        </Col>
+                      </Row>
+                    </div>
                   )}
                 </React.Fragment>
               );

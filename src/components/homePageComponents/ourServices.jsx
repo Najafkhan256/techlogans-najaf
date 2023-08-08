@@ -7,7 +7,7 @@ import OutlineButton from "../outlineButton";
 
 const OurServices = () => {
   return (
-    <div className="OurServices">
+    <div className="OurServices pt-5">
       <div className="OurServices-content">
         <h2>
           our <span>services</span>{" "}

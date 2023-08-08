@@ -1,5 +1,12 @@
 .cta {
-  background-color: $primary-color;
+  // background-image: url(../../../images/background/footer-bg.jpg);
+  background: linear-gradient(to bottom, #0d2460dc, #0d2460dc),
+    url("https://images.unsplash.com/photo-1585974738771-84483dd9f89f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1972&q=80")
+      center/cover no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
   padding: 40px 0px;
   margin: 50px 0px;
   .cta_content {
@@ -19,6 +26,7 @@
       color: white;
       @include tablet {
         @include print-styles($section-summary-defaults-md);
+        color: white;
       }
     }
     .contact_us_btn {

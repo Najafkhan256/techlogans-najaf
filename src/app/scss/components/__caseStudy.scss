@@ -1,5 +1,17 @@
+.case_study_details {
+  h2 {
+    @include print-styles($section-title_defaults);
+    text-align: center;
+    text-transform: capitalize;
+    @include tablet {
+      @include print-styles($section-title_defaults_md);
+    }
+  }
+}
+
 .case_study_card {
-  padding: 1em 3em 3em 3em;
+  // padding: 1em 3em 3em 3em;
+  position: relative;
   @include desktop {
     padding: 3em 0em 3em 0em;
   }
@@ -44,6 +56,7 @@
     cursor: pointer;
     transition: 0.5s ease-in-out;
     z-index: 1;
+    top: 100% !important;
     &::before {
       content: "";
     }
@@ -69,14 +82,28 @@
   }
 
   .slick-prev {
-    left: -16px;
+    left: 47%;
+    // bottom: 10% !important;
+    @include mdDesktop {
+      left: 40%;
+    }
     @include tablet {
-      left: -10px;
+      left: 46%;
+    }
+    @include mobile {
+      left: 37%;
     }
   }
 
   .slick-next {
-    right: -15px;
+    right: 47%;
+
+    @include mdDesktop {
+      right: 42%;
+    }
+    @include tablet {
+      right: 38%;
+    }
   }
 }
 
@@ -84,6 +111,15 @@
   width: 100%;
   display: flex;
   align-items: center;
+  // position: relative;
+  h2 {
+    @include print-styles($section-title_defaults_sm);
+    color: $secondary-color;
+    margin-top: 15px;
+    @include tablet {
+      font-size: 18px;
+    }
+  }
   a {
     text-decoration: none;
   }
@@ -91,7 +127,7 @@
     @include print-styles($section-title_defaults);
     text-decoration: none;
     @include tablet {
-      @include print-styles($section-title_defaults_md);
+      @include print-styles($section-title_defaults_sm);
     }
   }
 
@@ -108,6 +144,10 @@
       padding-right: 0px;
     }
   }
+  .buttonWrapper {
+    position: absolute;
+    bottom: 0px !important;
+  }
 }
 
 .animatedWrap {
@@ -122,6 +162,29 @@
     z-index: 2;
     border-radius: 50%;
     animation: rightLeft 2s linear infinite;
+  }
+  .case_study_stacks {
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      @include tablet {
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      li {
+        border: 1px solid $blog-author-border-color;
+        list-style-type: none;
+        padding: 5px 12px;
+        border-radius: 8px;
+        @include tablet {
+          padding: 5px 10px;
+          font-size: 14px;
+        }
+      }
+    }
   }
 }
 

@@ -36,6 +36,19 @@ const MobileHeader = ({ pathname }) => {
           </li>
           <li>
             <Link
+              href="/engagement-modal"
+              className={
+                pathname === "/engagement-modal" ||
+                pathname.includes("/engagement-modal")
+                  ? "active"
+                  : ""
+              }
+            >
+              engagement modal
+            </Link>
+          </li>
+          <li>
+            <Link
               href="/all-case-studies"
               className={
                 pathname === "/all-case-studies" ||

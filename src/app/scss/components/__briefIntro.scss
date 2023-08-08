@@ -23,8 +23,8 @@
   .section-title {
     @include print-styles($section-title_defaults);
     @include tablet {
-      text-align: center;
       @include print-styles($section-title_defaults_md);
+      text-align: center;
     }
     span {
       color: $secondary-color;
@@ -35,6 +35,7 @@
       @include print-styles($section-summary-defaults);
       @include tablet {
         @include print-styles($section-summary-defaults-md);
+        text-align: center;
       }
       //   color: #67779c;
       //   line-height: 34px;
