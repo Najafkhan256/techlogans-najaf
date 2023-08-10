@@ -1,8 +1,8 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import GreenButton from "./greenButton";
-import { servicesItroData } from "@/data";
+import { servicesIntroData } from "@/data";
 import {
   Accordion,
   AccordionItem,
@@ -12,8 +12,13 @@ import {
 } from "react-accessible-accordion";
 import ServicesCards from "./homePageComponents/servicesCards";
 import StackLogos from "./stackLogos";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ServiceIntro = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div className="service_Intro">
       <Container>
@@ -31,8 +36,8 @@ const ServiceIntro = () => {
       <ServicesCards />
       <Container>
         <Row className="mt-5">
-          {servicesItroData &&
-            servicesItroData?.map((serviceIntro, index) => {
+          {servicesIntroData &&
+            servicesIntroData?.map((serviceIntro, index) => {
               const isEvenColumn = index % 2 === 0;
               const firstBulletUUID = `a-${index}-0`;
               return (
@@ -40,7 +45,11 @@ const ServiceIntro = () => {
                   {isEvenColumn ? (
                     <>
                       <Col lg={6} className="my-md-5">
-                        <div className="image_wrapper">
+                        <div
+                          className="image_wrapper"
+                          data-aos="fade-right"
+                          data-aos-duration="2000"
+                        >
                           <Image
                             src={serviceIntro.image}
                             alt="cloud native"
@@ -117,7 +126,11 @@ const ServiceIntro = () => {
                           </div>
                         </Col>
                         <Col lg={6} className="my-3">
-                          <div className="image_wrapper">
+                          <div
+                            className="image_wrapper"
+                            data-aos="fade-left"
+                            data-aos-duration="2000"
+                          >
                             <Image
                               src={serviceIntro.image}
                               alt="cloud native"

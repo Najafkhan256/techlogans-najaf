@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import TeamOne from "@/images/staff/muharrem.webp";
 import TeamCover from "@/images/background/team-cover.png";
@@ -12,8 +12,26 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import { TeamData } from "@/data";
+import { fetchData } from "@/utils/api";
+import Skeleton from "react-loading-skeleton";
 
 const OurTeam = () => {
+  const [teamData, setTeamData] = useState(null);
+
+  useEffect(() => {
+    const fetchTeamData = async () => {
+      try {
+        const apiUrl = "/our-teams";
+        const responseData = await fetchData(apiUrl);
+        setTeamData(responseData);
+      } catch (error) {
+        console.error("Error fetching team data:", error);
+      }
+    };
+
+    fetchTeamData();
+  }, []);
+
   return (
     <div className="team_view">
       <h2>
@@ -21,40 +39,78 @@ const OurTeam = () => {
       </h2>
       <Container className="my-5 ">
         <Row>
-          {TeamData &&
-            TeamData?.map((team, index) => {
-              return (
+          {teamData
+            ? teamData &&
+              teamData.data?.map((team, index) => {
+                console.log("team..", team);
+                return (
+                  <Col lg={3} md={6} sm={6} key={index}>
+                    <div className="our-team">
+                      <div className="pic">
+                        <Image
+                          // src={team.attributes.teamImage.data.attributes.url}
+                          src={TeamOne}
+                          classNam="img-fluid"
+                          height={300}
+                          width={300}
+                          alt="team one"
+                        />
+                      </div>
+                      <div className="team-content">
+                        <h3 className="title">{team.attributes.teamName}</h3>
+                        <span className="post">
+                          {team.attributes.teamDesignation}
+                        </span>
+                      </div>
+                      <ul className="social">
+                        <li>
+                          <Link href="/">
+                            <FaFacebookF size={20} />
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="/">
+                            <FaLinkedinIn size={20} />
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </Col>
+                );
+              })
+            : Array.from({ length: 4 }).map((_, index) => (
                 <Col lg={3} md={6} sm={6} key={index}>
                   <div className="our-team">
                     <div className="pic">
-                      <Image
-                        src={team.profileImage}
-                        classNam="img-fluid"
-                        height={300}
-                        width={300}
-                        alt="team one"
+                      <Skeleton
+                        circle
+                        height="100%"
+                        containerClassName="avatar-skeleton"
                       />
                     </div>
-                    <div className="team-content">
-                      <h3 className="title">{team.name}</h3>
-                      <span className="post">{team.designation}</span>
+                    <div className="team-content mx-3">
+                      <h3 className="title">
+                        <Skeleton />
+                      </h3>
+                      <span className="post">
+                        <Skeleton />
+                      </span>
                     </div>
                     <ul className="social">
                       <li>
                         <Link href="/">
-                          <FaFacebookF size={20} />
+                          <Skeleton />
                         </Link>
                       </li>
                       <li>
                         <Link href="/">
-                          <FaLinkedinIn size={20} />
+                          <Skeleton />
                         </Link>
                       </li>
                     </ul>
                   </div>
                 </Col>
-              );
-            })}
+              ))}
 
           {/* <Col md={3} sm={6}>
           <div className="our-team">

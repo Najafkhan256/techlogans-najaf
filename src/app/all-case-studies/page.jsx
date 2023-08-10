@@ -9,8 +9,6 @@ export default function OurWorkPage() {
     <Layout>
       <Banner name="Work <span> We Are Proud Of </span>" />
       <OurWork />
-      <ContactForm />
-      <Map />
     </Layout>
   );
 }

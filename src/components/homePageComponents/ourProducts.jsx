@@ -99,7 +99,11 @@ const OurProducts = () => {
               );
             })}
             <Col lg={4} md={6} sm={12} className="odd-column">
-              <div className="product-icon" data-aos="fade-down">
+              <div
+                className="product-icon"
+                data-aos="fade-down"
+                data-aos-duration="2000"
+              >
                 <FaConnectdevelop size={60} className="developement" />
               </div>
               <h2 className="text-center section-column-title my-4">

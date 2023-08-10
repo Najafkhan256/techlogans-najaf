@@ -14,8 +14,6 @@ export default function Services() {
         <Banner title="Our <span>Services</span> " />
         <ServiceIntro />
         <OurBrands />
-        <ContactForm />
-        <Map />
       </div>
     </Layout>
   );

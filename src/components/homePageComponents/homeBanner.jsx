@@ -49,6 +49,7 @@ const HomeBanner = () => {
                   alt="hero"
                   height={400}
                   width={500}
+                  loading="lazy"
                 />
               </div>
             </Col>

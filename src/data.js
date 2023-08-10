@@ -128,7 +128,7 @@ export const coreValuesData = [
       "We love what we do and we are good at it. We achieve the best outcomes when we enjoy the work",
   },
 ];
-export const servicesItroData = [
+export const servicesIntroData = [
   {
     image: CloudNativeImage,
     title: "Cloud-Native Application Development",

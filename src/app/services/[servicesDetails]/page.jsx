@@ -37,8 +37,6 @@ const AllCaseStudyDetails = ({ params }) => {
         <h2>{serviceTitle}</h2>
         {/* <p>{selectedProject.description}</p> */}
       </div>
-      <ContactForm />
-      <Map />
     </Layout>
   );
 };

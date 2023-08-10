@@ -8,8 +8,6 @@ export default function ContactPage() {
   return (
     <Layout>
       <Banner name="contact <span> us </span>" />
-      <ContactForm />
-      <Map />
     </Layout>
   );
 }

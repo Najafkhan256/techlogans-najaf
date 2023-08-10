@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import GreenButton from "./greenButton";
 import { engagementModelData } from "@/data";
@@ -10,8 +10,12 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from "react-accessible-accordion";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const EngagementModal = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div className="service_Intro">
       <Container>
@@ -25,7 +29,11 @@ const EngagementModal = () => {
                   {isEvenColumn ? (
                     <>
                       <Col lg={6} className="my-3">
-                        <div className="image_wrapper">
+                        <div
+                          className="image_wrapper"
+                          data-aos="fade-right"
+                          data-aos-duration="2000"
+                        >
                           <Image
                             src={serviceIntro.image}
                             alt="cloud native"
@@ -123,7 +131,11 @@ const EngagementModal = () => {
                           </div>
                         </Col>
                         <Col lg={6} className="my-3">
-                          <div className="image_wrapper">
+                          <div
+                            className="image_wrapper"
+                            data-aos="fade-left"
+                            data-aos-duration="2000"
+                          >
                             <Image
                               src={serviceIntro.image}
                               alt="cloud native"
