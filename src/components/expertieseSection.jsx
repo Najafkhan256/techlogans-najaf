@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import expertiesImage from "@/images/expertiese.svg";
 import meetingImage from "@/images/meeting.png";
 import hiringDeveloper from "@/images/hiring-developer.png";
@@ -8,6 +8,7 @@ import bugImage from "@/images/bug.png";
 import { Container } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { fetchData } from "@/utils/api";
 
 const ExpertieseData = [
   {
@@ -37,6 +38,22 @@ const ExpertieseData = [
 ];
 
 const ExpertieseSection = () => {
+  const [expertieseData, setExpertieseData] = useState(null);
+
+  useEffect(() => {
+    const fetchExpertieseData = async () => {
+      try {
+        const apiUrl = "/our-expertieses";
+        const responseData = await fetchData(apiUrl);
+        setExpertieseData(responseData);
+      } catch (error) {
+        console.error("Error fetching expertiese data:", error);
+      }
+    };
+
+    fetchExpertieseData();
+  }, []);
+
   useEffect(() => {
     AOS.init();
   }, []);
@@ -50,45 +67,39 @@ const ExpertieseSection = () => {
         </div>
         <div className="row">
           <div className="col-lg-6">
-            {ExpertieseData &&
-              ExpertieseData.map(
-                ({
-                  title,
-                  img,
-                  desc,
-                  bgColor,
-                  index,
-                  animationName,
-                  animationDuration,
-                }) => {
-                  return (
+            {expertieseData &&
+              expertieseData?.data?.map((expertiese) => {
+                return (
+                  <div
+                    className="media my-4"
+                    key={expertiese.id}
+                    data-aos={expertiese.attributes.animationName}
+                    data-aos-duration={expertiese.attributes.animationDuration}
+                  >
                     <div
-                      className="media my-4"
-                      key={index}
-                      data-aos={animationName}
-                      data-aos-duration={animationDuration}
+                      className="expertiese_bullet_image"
+                      style={{
+                        backgroundColor: `${expertiese.attributes.colorCode}`,
+                      }}
                     >
-                      <div
-                        className="expertiese_bullet_image"
-                        style={{ backgroundColor: `${bgColor}` }}
-                      >
-                        <Image
-                          src={img}
-                          className="mr-3"
-                          alt={title}
-                          height={40}
-                          width={40}
-                        />
-                      </div>
-
-                      <div className="media-body">
-                        <h5 className="mt-0">{title}</h5>
-                        <p>{desc}</p>
-                      </div>
+                      <Image
+                        src={ExpertieseData[0].img}
+                        className="mr-3"
+                        alt="expertiese-image"
+                        height={40}
+                        width={40}
+                      />
                     </div>
-                  );
-                }
-              )}
+
+                    <div className="media-body">
+                      <h5 className="mt-0">
+                        {expertiese.attributes.expertieseTitle}
+                      </h5>
+                      <p>{expertiese.attributes.expertieseDescription}</p>
+                    </div>
+                  </div>
+                );
+              })}
           </div>
           <div className="col-lg-6">
             <div

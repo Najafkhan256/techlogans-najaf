@@ -14,6 +14,7 @@ import Image from "next/image";
 import { TeamData } from "@/data";
 import { fetchData } from "@/utils/api";
 import Skeleton from "react-loading-skeleton";
+import imageUrlBuilder from "@/utils/imageUrl";
 
 const OurTeam = () => {
   const [teamData, setTeamData] = useState(null);
@@ -47,9 +48,12 @@ const OurTeam = () => {
                   <Col lg={3} md={6} sm={6} key={index}>
                     <div className="our-team">
                       <div className="pic">
-                        <Image
-                          // src={team.attributes.teamImage.data.attributes.url}
-                          src={TeamOne}
+                        <img
+                          src={imageUrlBuilder(
+                            team.attributes.teamImage.data &&
+                              team.attributes.teamImage.data.attributes.url
+                          )}
+                          // src={TeamOne}
                           classNam="img-fluid"
                           height={300}
                           width={300}

@@ -1,5 +1,6 @@
+"use client";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import GreenButton from "./greenButton";
 import { servicesIntroData } from "@/data";
@@ -14,11 +15,32 @@ import ServicesCards from "./homePageComponents/servicesCards";
 import StackLogos from "./stackLogos";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { fetchData } from "@/utils/api";
+import imageUrlBuilder from "@/utils/imageUrl";
 
 const ServiceIntro = () => {
+  const [serviceIntroData, setServiceIntroData] = useState(null);
+
+  console.log("serviceIntroData", serviceIntroData);
+
+  useEffect(() => {
+    const fetchServicesIntroData = async () => {
+      try {
+        const apiUrl = "/service-intros";
+        const responseData = await fetchData(apiUrl);
+        setServiceIntroData(responseData.data);
+      } catch (error) {
+        console.error("Error fetching services intro data:", error);
+      }
+    };
+
+    fetchServicesIntroData();
+  }, []);
+
   useEffect(() => {
     AOS.init();
   }, []);
+
   return (
     <div className="service_Intro">
       <Container>
@@ -36,8 +58,8 @@ const ServiceIntro = () => {
       <ServicesCards />
       <Container>
         <Row className="mt-5">
-          {servicesIntroData &&
-            servicesIntroData?.map((serviceIntro, index) => {
+          {serviceIntroData &&
+            serviceIntroData?.map((serviceIntro, index) => {
               const isEvenColumn = index % 2 === 0;
               const firstBulletUUID = `a-${index}-0`;
               return (
@@ -50,8 +72,12 @@ const ServiceIntro = () => {
                           data-aos="fade-right"
                           data-aos-duration="2000"
                         >
-                          <Image
-                            src={serviceIntro.image}
+                          <img
+                            src={imageUrlBuilder(
+                              serviceIntro.attributes.serviceIntroImage.data &&
+                                serviceIntro.attributes.serviceIntroImage.data
+                                  .attributes.url
+                            )}
                             alt="cloud native"
                             height={600}
                             width={600}
@@ -61,11 +87,13 @@ const ServiceIntro = () => {
                       </Col>
                       <Col lg={6} className="my-3">
                         <div className="services_content">
-                          <h3>{serviceIntro.title}</h3>
-                          <p>{serviceIntro.description}</p>
-                          {serviceIntro.bullets && (
+                          <h3>{serviceIntro.attributes.serviceIntroTitle}</h3>
+                          <p>
+                            {serviceIntro.attributes.serviceIntroDescription}
+                          </p>
+                          {serviceIntro.attributes.servicesBullets && (
                             <Accordion preExpanded={firstBulletUUID}>
-                              {serviceIntro.bullets.map(
+                              {serviceIntro.attributes.servicesBullets.data.map(
                                 (bullet, bulletIndex) => (
                                   <AccordionItem
                                     key={bulletIndex}
@@ -73,11 +101,11 @@ const ServiceIntro = () => {
                                   >
                                     <AccordionItemHeading>
                                       <AccordionItemButton>
-                                        {bullet}
+                                        {bullet.name}
                                       </AccordionItemButton>
                                     </AccordionItemHeading>
                                     <AccordionItemPanel>
-                                      <p>{bullet}</p>
+                                      <p>{bullet.name}</p>
                                     </AccordionItemPanel>
                                   </AccordionItem>
                                 )
@@ -96,11 +124,13 @@ const ServiceIntro = () => {
                       <Row className="py-4">
                         <Col lg={6} className="my-3">
                           <div className="services_content">
-                            <h3>{serviceIntro.title}</h3>
-                            <p>{serviceIntro.description}</p>
-                            {serviceIntro.bullets && (
+                            <h3>{serviceIntro.attributes.serviceIntroTitle}</h3>
+                            <p>
+                              {serviceIntro.attributes.serviceIntroDescription}
+                            </p>
+                            {serviceIntro.attributes.servicesBullets && (
                               <Accordion preExpanded={firstBulletUUID}>
-                                {serviceIntro.bullets.map(
+                                {serviceIntro.attributes.servicesBullets.data.map(
                                   (bullet, bulletIndex) => (
                                     <AccordionItem
                                       key={bulletIndex}
@@ -108,11 +138,11 @@ const ServiceIntro = () => {
                                     >
                                       <AccordionItemHeading>
                                         <AccordionItemButton>
-                                          {bullet}
+                                          {bullet.name}
                                         </AccordionItemButton>
                                       </AccordionItemHeading>
                                       <AccordionItemPanel>
-                                        <p>{bullet}</p>
+                                        <p>{bullet.name}</p>
                                       </AccordionItemPanel>
                                     </AccordionItem>
                                   )
@@ -131,8 +161,13 @@ const ServiceIntro = () => {
                             data-aos="fade-left"
                             data-aos-duration="2000"
                           >
-                            <Image
-                              src={serviceIntro.image}
+                            <img
+                              src={imageUrlBuilder(
+                                serviceIntro.attributes.serviceIntroImage
+                                  .data &&
+                                  serviceIntro.attributes.serviceIntroImage.data
+                                    .attributes.url
+                              )}
                               alt="cloud native"
                               height={600}
                               width={600}

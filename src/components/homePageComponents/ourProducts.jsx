@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import MultiChannelImage from "@/images/Multi-channel.svg";
 import CloudNativeImage from "@/images/Cloud-native.svg";
@@ -8,8 +8,9 @@ import SecureImage from "@/images/Secure.svg";
 import CostEffectiveImage from "@/images/CostEffective.svg";
 import Image from "next/image";
 import { FaConnectdevelop } from "react-icons/fa";
-import GreenButton from "../greenButton";
 import OutlineButton from "../outlineButton";
+import { fetchData } from "@/utils/api";
+import imageUrlBuilder from "@/utils/imageUrl";
 
 const productsData = [
   {
@@ -51,6 +52,22 @@ const productsData = [
 ];
 
 const OurProducts = () => {
+  const [ourProductData, setOurProductData] = useState(null);
+
+  useEffect(() => {
+    const fetchProductsData = async () => {
+      try {
+        const apiUrl = "/our-products";
+        const responseData = await fetchData(apiUrl);
+        setOurProductData(responseData);
+      } catch (error) {
+        console.error("Error fetching products data:", error);
+      }
+    };
+
+    fetchProductsData();
+  }, []);
+
   return (
     <div className=" light_background">
       <Container>
@@ -66,38 +83,41 @@ const OurProducts = () => {
             define the following criteria for modern web apps:
           </div>
           <Row>
-            {productsData.map((product, index) => {
-              const isEvenColumn = index % 2 === 0;
-              return (
-                <Col
-                  lg={4}
-                  md={6}
-                  sm={12}
-                  className={`${isEvenColumn ? "even-column" : "odd-column"}`}
-                  key={index}
-                >
-                  <div
-                    className="product-icon"
-                    data-aos="fade-down"
-                    data-aos-duration="2000"
+            {ourProductData &&
+              ourProductData?.data?.map((product, index) => {
+                const isEvenColumn = index % 2 === 0;
+                return (
+                  <Col
+                    lg={4}
+                    md={6}
+                    sm={12}
+                    className={`${isEvenColumn ? "even-column" : "odd-column"}`}
+                    key={index}
                   >
-                    <Image
-                      src={product?.img}
-                      alt={product?.title}
-                      height={60}
-                      width={60}
-                    />
-                  </div>
+                    <div
+                      className="product-icon"
+                      data-aos="fade-down"
+                      data-aos-duration="2000"
+                    >
+                      <Image
+                        src={imageUrlBuilder(
+                          product?.attributes?.productImage.data.attributes.url
+                        )}
+                        alt={product?.title}
+                        height={60}
+                        width={60}
+                      />
+                    </div>
 
-                  <h2 className="text-center section-column-title my-4">
-                    {product?.title}
-                  </h2>
-                  <div className="productDescription">
-                    {product?.description}
-                  </div>
-                </Col>
-              );
-            })}
+                    <h2 className="text-center section-column-title my-4">
+                      {product?.attributes?.productName}
+                    </h2>
+                    <div className="productDescription">
+                      {product?.attributes?.productDescription}
+                    </div>
+                  </Col>
+                );
+              })}
             <Col lg={4} md={6} sm={12} className="odd-column">
               <div
                 className="product-icon"

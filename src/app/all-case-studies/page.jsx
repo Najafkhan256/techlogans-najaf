@@ -1,3 +1,4 @@
+"use client"
 import Layout from "@/Layout";
 import Banner from "@/components/Banner";
 import ContactForm from "@/components/contactForm";

@@ -1,8 +1,26 @@
-import { coreValuesData } from "@/data";
+"use client";
+import { fetchData } from "@/utils/api";
+import imageUrlBuilder from "@/utils/imageUrl";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const CoreValues = () => {
+  const [coreValueData, setCoreValueData] = useState(null);
+
+  useEffect(() => {
+    const fetchCoreValuesData = async () => {
+      try {
+        const apiUrl = "/core-values";
+        const responseData = await fetchData(apiUrl);
+        setCoreValueData(responseData.data);
+      } catch (error) {
+        console.error("Error fetching core values data:", error);
+      }
+    };
+
+    fetchCoreValuesData();
+  }, []);
+
   return (
     <section className="core-values-section light_background">
       <div className="container">
@@ -17,8 +35,8 @@ const CoreValues = () => {
           </p>
         </div>
         <div className="row">
-          {coreValuesData &&
-            coreValuesData.map((coreValue, index) => (
+          {coreValueData &&
+            coreValueData.map((coreValue, index) => (
               <div
                 key={index}
                 className="col-lg-4 col-md-6 col-sm-12 mb-4 mb-md-0"
@@ -27,8 +45,11 @@ const CoreValues = () => {
                   <div className="row">
                     <div className="col-lg-12 mb-3 d-flex d-md-block justify-content-center">
                       <div className="img-wrapper">
-                        <Image
-                          src={coreValue.icon}
+                        <img
+                          src={imageUrlBuilder(
+                            coreValue.attributes.coreImage.data &&
+                              coreValue.attributes.coreImage.data.attributes.url
+                          )}
                           alt="core icons"
                           height={45}
                           width={55}
@@ -36,10 +57,10 @@ const CoreValues = () => {
                       </div>
                     </div>
                     <div className="col-12 card-title d-flex d-md-block justify-content-center">
-                      <h4>{coreValue.title}</h4>
+                      <h4>{coreValue.attributes.coreTitle}</h4>
                     </div>
                     <div className="col-12 card-paragraph d-flex d-md-block justify-content-center">
-                      <p>{coreValue.description}</p>
+                      <p>{coreValue.attributes.coreDescription}</p>
                     </div>
                   </div>
                 </div>

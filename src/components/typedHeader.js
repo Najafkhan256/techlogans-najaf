@@ -14,7 +14,7 @@ const TypedHeader = () => {
         const responseData = await fetchData(apiUrl);
         setTypedData(responseData);
       } catch (error) {
-        console.error("Error fetching team data:", error);
+        console.error("Error fetching tyoed data:", error);
       }
     };
 

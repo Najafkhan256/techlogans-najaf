@@ -2,7 +2,11 @@ import { AiFillHtml5 } from "react-icons/ai";
 import { BsCodeSlash, BsEye, BsRocketTakeoff } from "react-icons/bs";
 import { FaReact, FaNodeJs, FaSass, FaHandHoldingUsd } from "react-icons/fa";
 import { SiNextdotjs, SiMongodb } from "react-icons/si";
-import { RiBootstrapLine, RiGatsbyLine, RiJavascriptLine } from "react-icons/ri";
+import {
+  RiBootstrapLine,
+  RiGatsbyLine,
+  RiJavascriptLine,
+} from "react-icons/ri";
 import { DiJavascript1 } from "react-icons/di";
 import DeepExprtiese from "./images/icons/deep-expertise.png";
 import AddValues from "./images/icons/add-value.png";
@@ -219,6 +223,7 @@ export const AllPorjectsData = [
     ),
     // link: "/all-case-studies/https://thephenixgroup.com/",
     link: "/all-case-studies/phenix",
+    technologiese: ["React", "Next", "Gatsby", "MongoDB"],
   },
   {
     title: "HyCasino (Nextjs, REST API)",
@@ -234,6 +239,7 @@ export const AllPorjectsData = [
       />
     ),
     link: "/all-case-studies/https://hycasino.com/",
+    technologiese: ["React", "Next", "Gatsby", "MongoDB"],
   },
 ];
 

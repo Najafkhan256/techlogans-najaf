@@ -1,0 +1,38 @@
+.map {
+  border-radius: 12px 12px 0px 0px;
+  .map_location {
+    border-radius: 12px 12px 0px 0px;
+    background-color: $primary-color;
+    padding: 40px 20px;
+    ul {
+      margin: 0px !important;
+      padding: 0px !important;
+      display: flex !important;
+      justify-content: space-around;
+      li {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        // &:nth-child(2) {
+        //   background-color: $secondary-color;
+        // }
+
+        img {
+          margin-bottom: 15px;
+        }
+        a {
+          color: #67779c;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 1.3rem;
+          transition: 0.5s;
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
